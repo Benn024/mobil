@@ -1,0 +1,46 @@
+body{
+    background-image: url(img/brown-wood-texture-background-hd.jpg);
+}
+#wrapper{
+    
+    border: solid 3px silver;
+    margin: 0 auto;
+    width: 500px;
+    margin-top: 50px;
+    border-radius: 13px;
+    
+}
+
+#mobil{
+    
+    height: 820px;
+    width: 500px;
+    background-color: black;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+#skarm{
+    
+    height: 760px;
+    width: 460px;
+    background-color: white;
+    margin: 0 auto;
+    
+}
+button{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    border: 2px solid silver;
+    margin-left: 230px;
+    margin-top: 10px;
+    background-color: black;
+}
+#square{
+    height: 20px;
+    width: 20px;
+    border: thin solid silver;
+    border-radius: 5px;
+    margin: 0 auto;
+}
