@@ -16,7 +16,10 @@ if ($_POST["action"] == "Radera") {
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 }
-
+$id=0;
+if ($_POST["action"] == "Edit") {
+    $id = $_POST["id"];
+}
 
 $sql = "SELECT * FROM kontakt";
 $stmt = $dbh->prepare($sql);
@@ -70,6 +73,16 @@ $telefonbok = $stmt->fetchAll();
                         echo "</td>";
                         echo "</tr>";
                         echo "</form>";
+                        
+                        if($personer["id"]==$id){
+                            echo "<tr>";
+                            echo "<td>";
+                            
+                            echo "tjafan";
+                            
+                            echo "</td>";
+                            echo "</tr>";
+                        }
                     }
                     echo "</table>";
                     ?>
