@@ -11,10 +11,12 @@ $efternamn = filter_input(INPUT_POST, 'efternamn', FILTER_SANITIZE_SPECIAL_CHARS
 $telefonnummer = filter_input(INPUT_POST, 'telefonnummer', FILTER_SANITIZE_SPECIAL_CHARS);
 $mail = filter_input(INPUT_POST, 'mail', FILTER_SANITIZE_SPECIAL_CHARS);
 
+if (isset($_POST["action"])) {
 if ($_POST["action"] == "add") {
     $sql = "INSERT INTO `kontakt`(`id`, `namn`, `efternamn`, `telefonnummer`, `mail`) VALUES ('','" . $namn . "','" . $efternamn . "','" . $telefonnummer . "','" . $mail . "')";
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
+}
 }
 
 $sql = "SELECT * FROM kontakt";
