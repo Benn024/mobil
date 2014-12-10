@@ -11,7 +11,6 @@ $namn = filter_input(INPUT_POST, 'namn', FILTER_SANITIZE_SPECIAL_CHARS);
 $efternamn = filter_input(INPUT_POST, 'efternamn', FILTER_SANITIZE_SPECIAL_CHARS);
 $telefonnummer = filter_input(INPUT_POST, 'telefonnummer', FILTER_SANITIZE_SPECIAL_CHARS);
 $mail = filter_input(INPUT_POST, 'mail', FILTER_SANITIZE_SPECIAL_CHARS);
-$id = 0;
 
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "Radera") {
@@ -20,7 +19,8 @@ if (isset($_POST["action"])) {
         $stmt->execute();
     }
     if ($_POST["action"] == "uppdatera") {
-        $sql = "UPDATE kontakt SET namn='" . $namn . "',`efternamn`='" . $efternamn . "',`telefonnummer`='" . $telefonnummer . "',`mail`='" . $mail . "' WHERE id='" . $id . "'";
+        $sql = "UPDATE kontakt SET namn='" . $namn . "',`efternamn`='" . $efternamn . "',`telefonnummer`='" . $telefonnummer . "',`mail`='" . $mail . "' WHERE id=" . $id . "";
+        echo $sql;
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
     }
