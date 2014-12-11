@@ -20,12 +20,13 @@ if (isset($_POST["action"])) {
     }
     if ($_POST["action"] == "uppdatera") {
         $sql = "UPDATE kontakt SET namn='" . $namn . "',`efternamn`='" . $efternamn . "',`telefonnummer`='" . $telefonnummer . "',`mail`='" . $mail . "' WHERE id=" . $id . "";
-        echo $sql;
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
+        header("Location:kontaktsida.php");
     }
     if ($_POST["action"] == "Edit") {
         $id = $_POST["id"];
+        
     }
 }
 
@@ -88,19 +89,18 @@ foreach ($telefonbok as $personer) {
 
         echo "<table id='update'>";
         echo "<form method='POST'>";
-//                            echo "<br />";
-//                            echo "<br />";
+
         echo "<input type='text' value='" . $personer["id"] . "' name='id'>";
-//                            echo "<br />";
+
         echo "<input type='text' value='" . $personer["namn"] . "' name='namn'>";
-//                            echo "<br />";
+
         echo "<input type='text' value='" . $personer["efternamn"] . "' name='efternamn'>";
-//                            echo "<br />";
+
         echo "<input type='text' value='" . $personer["telefonnummer"] . "' name='telefonnummer'>";
-//                            echo "<br />";
+
         echo "<input type='text' value='" . $personer["mail"] . "' name='mail'>";
-//                            echo "<br />";
-        echo "<input type='submit' value='uppdatera' name='action'>";
+
+        echo "<input type='submit' value='uppdatera' href='kontaktsida.php' name='action'>";
         echo "</form>";
         echo "</table>";
 
