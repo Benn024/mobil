@@ -7,3 +7,6 @@
 .box{
     margin-bottom: 10px;
 }
+table{
+    border-collapse: collapse;
+}

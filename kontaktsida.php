@@ -57,6 +57,9 @@ $telefonbok = $stmt->fetchAll();
                     <a href="add.php"><div class="box" id="addera">
                             <h3>Lägg till kontakt</h3>
                         </div></a>
+                    <a href="galleri.php"><div class="box" id="galleri">
+                            <h3>Galleri</h3>
+                    </div></a>
 <?php
 echo "<table class='bord' border='1'>";
 foreach ($telefonbok as $personer) {
@@ -85,26 +88,39 @@ foreach ($telefonbok as $personer) {
 
     if ($personer["id"] == $id) {
         echo "<tr>";
-        echo "<td>";
+//        echo "<td>";
 
-        echo "<table id='update'>";
+//        echo "<table id='update'>";
         echo "<form method='POST'>";
-
-        echo "<input type='text' value='" . $personer["id"] . "' name='id'>";
-
+        
+        
+        echo "<td>";
+              echo "<input type='hidden' value='" . $personer["id"] . "' name='id'>";
         echo "<input type='text' value='" . $personer["namn"] . "' name='namn'>";
-
-        echo "<input type='text' value='" . $personer["efternamn"] . "' name='efternamn'>";
-
-        echo "<input type='text' value='" . $personer["telefonnummer"] . "' name='telefonnummer'>";
-
-        echo "<input type='text' value='" . $personer["mail"] . "' name='mail'>";
-
-        echo "<input type='submit' value='uppdatera' href='kontaktsida.php' name='action'>";
-        echo "</form>";
-        echo "</table>";
-
         echo "</td>";
+        
+        echo "<td>";
+        echo "<input type='text' value='" . $personer["efternamn"] . "' name='efternamn'>";
+        echo "</td>";
+        echo "</tr>";
+        
+        echo "<tr>";
+        echo "<td>";
+        echo "<input type='text' value='" . $personer["telefonnummer"] . "' name='telefonnummer'>";
+        echo "</td>";
+        
+        echo "<td>";
+        echo "<input type='text' value='" . $personer["mail"] . "' name='mail'>";
+        echo "</td>";
+        
+        echo "<td>";
+        echo "<input type='submit' value='uppdatera' href='kontaktsida.php' name='action'>";
+        echo "</td>";
+        
+        echo "</form>";
+//        echo "</table>";
+
+//        echo "</td>";
         echo "</tr>";
     }
 }

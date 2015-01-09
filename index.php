@@ -30,6 +30,9 @@
                     <a href="add.php"><div class="box" id="addera">
                             <h3>Lägg till kontakt</h3>
                     </div></a>
+                    <a href="galleri.php"><div class="box" id="galleri">
+                            <h3>Galleri</h3>
+                    </div></a>
                     
                     
                 </div>

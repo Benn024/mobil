@@ -45,7 +45,7 @@ button{
     margin: 0 auto;
 }
 .box{
-    width: 50%;
+    width: 33.075%;
     border-bottom: 2px solid black;
     float: left;
 }
@@ -56,5 +56,6 @@ a{
 }
 #addera{
     border-left: 2px solid black;
-    width: 278px;
+    border-right: 2px solid black;
+    /*width: 278px;*/
 }
