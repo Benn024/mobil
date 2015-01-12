@@ -44,6 +44,9 @@ button{
     border-radius: 5px;
     margin: 0 auto;
 }
+#square:hover{
+    cursor: help;
+}
 .box{
     width: 33.075%;
     border-bottom: 2px solid black;

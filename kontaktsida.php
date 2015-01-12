@@ -26,7 +26,6 @@ if (isset($_POST["action"])) {
     }
     if ($_POST["action"] == "Edit") {
         $id = $_POST["id"];
-        
     }
 }
 
@@ -59,74 +58,74 @@ $telefonbok = $stmt->fetchAll();
                         </div></a>
                     <a href="galleri.php"><div class="box" id="galleri">
                             <h3>Galleri</h3>
-                    </div></a>
-<?php
-echo "<table class='bord' border='1'>";
-foreach ($telefonbok as $personer) {
-    echo "<form method='POST' class='knapp';>";
-    echo "<tr>";
-    echo "<td>";
-    echo $personer["namn"];
-    echo "</td>";
-    echo "<td>";
-    echo $personer["efternamn"];
-    echo "</td>";
-    echo "<td>";
-    echo $personer["telefonnummer"];
-    echo "</td>";
-    echo "<td>";
-    echo $personer["mail"];
-    echo "</td>";
-    echo "<td>";
-    echo "<input type='submit' value='Radera' name='action'>";
-    echo "<input type='hidden' value='" . $personer["id"] . "' name='id'>";
-    echo "<input type='submit' value='Edit' name='action'>";
-    echo "<input type='hidden' value='" . $personer["id"] . "' name='id'>";
-    echo "</td>";
-    echo "</tr>";
-    echo "</form>";
+                        </div></a>
+                    <?php
+                    echo "<table class='bord' border='1'>";
+                    foreach ($telefonbok as $personer) {
+                        echo "<form method='POST' class='knapp';>";
+                        echo "<tr>";
+                        echo "<td>";
+                        echo "<img src='avatar/deadpool.png'>";
+                        echo "</td>";
+                        echo "<td>";
+                        echo $personer["namn"];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $personer["efternamn"];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $personer["telefonnummer"];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $personer["mail"];
+                        echo "</td>";
+                        echo "<td>";
+                        echo "<input type='submit' value='Radera' name='action'>";
+                        echo "<input type='hidden' value='" . $personer["id"] . "' name='id'>";
+                        echo "<input type='submit' value='   Edit   ' name='action'>";
+                        echo "<input type='hidden' value='" . $personer["id"] . "' name='id'>";
+                        echo "</td>";
+                        echo "</tr>";
+                        echo "</form>";
 
-    if ($personer["id"] == $id) {
-        echo "<tr>";
+                        if ($personer["id"] == $id) {
+//                            echo "<tr>";
 //        echo "<td>";
-
 //        echo "<table id='update'>";
-        echo "<form method='POST'>";
-        
-        
-        echo "<td>";
-              echo "<input type='hidden' value='" . $personer["id"] . "' name='id'>";
-        echo "<input type='text' value='" . $personer["namn"] . "' name='namn'>";
-        echo "</td>";
-        
-        echo "<td>";
-        echo "<input type='text' value='" . $personer["efternamn"] . "' name='efternamn'>";
-        echo "</td>";
-        echo "</tr>";
-        
-        echo "<tr>";
-        echo "<td>";
-        echo "<input type='text' value='" . $personer["telefonnummer"] . "' name='telefonnummer'>";
-        echo "</td>";
-        
-        echo "<td>";
-        echo "<input type='text' value='" . $personer["mail"] . "' name='mail'>";
-        echo "</td>";
-        
-        echo "<td>";
-        echo "<input type='submit' value='uppdatera' href='kontaktsida.php' name='action'>";
-        echo "</td>";
-        
-        echo "</form>";
+                            echo "<form method='POST'>";
+
+
+                            echo "<td>";
+                            echo "<input size='6' type='hidden' value='" . $personer["id"] . "' name='id'>";
+                            echo "<input size='6' type='text' value='" . $personer["namn"] . "' name='namn'>";
+                            echo "</td>";
+
+                            echo "<td>";
+                            echo "<input size='10' type='text' value='" . $personer["efternamn"] . "' name='efternamn'>";
+                            echo "</td>";
+//                            echo "</tr>";
+
+//                            echo "<tr>";
+                            echo "<td>";
+                            echo "<input size='7' type='text' value='" . $personer["telefonnummer"] . "' name='telefonnummer'>";
+                            echo "</td>";
+
+                            echo "<td>";
+                            echo "<input size='20' type='text' value='" . $personer["mail"] . "' name='mail'>";
+                            echo "</td>";
+
+                            echo "<td>";
+                            echo "<input size='5' type='submit' value='uppdatera' href='kontaktsida.php' name='action'>";
+                            echo "</td>";
+
+                            echo "</form>";
 //        echo "</table>";
-
 //        echo "</td>";
-        echo "</tr>";
-    }
-}
-echo "</table>";
-?>
-
+//                            echo "</tr>";
+                        }
+                    }
+                    echo "</table>";
+                    ?>
                 </div>
 
                 <a href="index.php">
