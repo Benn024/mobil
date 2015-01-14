@@ -1,7 +1,29 @@
 #addera{
+    
     border-bottom: none;
+    
 }
+
 #add{
+    
     padding-top: 200px;
     padding-left: 50px;
+    
+}
+
+.bild{
+    
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: dotted thin gray;
+    border-radius: 0px;
+    margin-left: 2px;
+    
+}
+
+.bild:hover{
+    
+    background-color: whitesmoke;
+    
 }

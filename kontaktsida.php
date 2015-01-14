@@ -7,6 +7,7 @@ define("DB_PASSWORD", "");
 $dbh = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8', DB_USER, DB_PASSWORD);
 
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$filnamn = filter_input(INPUT_POST, 'filnamn', FILTER_SANITIZE_SPECIAL_CHARS);
 $namn = filter_input(INPUT_POST, 'namn', FILTER_SANITIZE_SPECIAL_CHARS);
 $efternamn = filter_input(INPUT_POST, 'efternamn', FILTER_SANITIZE_SPECIAL_CHARS);
 $telefonnummer = filter_input(INPUT_POST, 'telefonnummer', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -65,7 +66,7 @@ $telefonbok = $stmt->fetchAll();
                         echo "<form method='POST' class='knapp';>";
                         echo "<tr>";
                         echo "<td>";
-                        echo "<img src='avatar/deadpool.png'>";
+                        echo "<img src='avatar/".$personer["filnamn"]."'>";
                         echo "</td>";
                         echo "<td>";
                         echo $personer["namn"];
@@ -94,7 +95,10 @@ $telefonbok = $stmt->fetchAll();
 //        echo "<table id='update'>";
                             echo "<form method='POST'>";
 
-
+                            echo "<td>";
+                            echo "<input size='6' type='text' value='" . $personer["filnamn"] . "' name='filnamn'>";
+                            echo "</td>";
+                            
                             echo "<td>";
                             echo "<input size='6' type='hidden' value='" . $personer["id"] . "' name='id'>";
                             echo "<input size='6' type='text' value='" . $personer["namn"] . "' name='namn'>";

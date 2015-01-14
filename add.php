@@ -6,6 +6,7 @@ define("DB_PASSWORD", "");
 
 $dbh = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8', DB_USER, DB_PASSWORD);
 
+$filnamn = filter_input(INPUT_POST, 'filnamn', FILTER_SANITIZE_SPECIAL_CHARS);
 $namn = filter_input(INPUT_POST, 'namn', FILTER_SANITIZE_SPECIAL_CHARS);
 $efternamn = filter_input(INPUT_POST, 'efternamn', FILTER_SANITIZE_SPECIAL_CHARS);
 $telefonnummer = filter_input(INPUT_POST, 'telefonnummer', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -13,7 +14,7 @@ $mail = filter_input(INPUT_POST, 'mail', FILTER_SANITIZE_SPECIAL_CHARS);
 
 if (isset($_POST["action"])) {
 if ($_POST["action"] == "add") {
-    $sql = "INSERT INTO `kontakt`(`id`, `namn`, `efternamn`, `telefonnummer`, `mail`) VALUES ('','" . $namn . "','" . $efternamn . "','" . $telefonnummer . "','" . $mail . "')";
+    $sql = "INSERT INTO `kontakt`(`id`, `filnamn`, `namn`, `efternamn`, `telefonnummer`, `mail`) VALUES ('','" . $filnamn . "','" . $namn . "','" . $efternamn . "','" . $telefonnummer . "','" . $mail . "')";
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 }
@@ -54,6 +55,9 @@ $telefonbok = $stmt->fetchAll();
                     <div id="add">
                     <table>
                         <form method='POST'>
+                            <!--<input type="submit" value="+" name="filnamn" class="bild">-->
+                            <input type="text" placeholder="filnamn" name="filnamn">
+                            <br />
                             <input type="text" placeholder="namn" name="namn">
                             <br />
                             <input type="text" placeholder="efternamn" name="efternamn">
